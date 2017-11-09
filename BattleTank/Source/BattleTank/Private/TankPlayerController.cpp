@@ -71,7 +71,9 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVec
 	auto StartLocation = PlayerCameraManager->GetCameraLocation();
 	auto EndLocation = StartLocation + (LookDirection * LineTraceRange);
 
-	if (GetWorld()->LineTraceSingleByChannel(HitResult, StartLocation, EndLocation, ECC_Visibility)) // Line Trace Succeeds
+	FCollisionQueryParams Params; // Added to ignore actor when crosshairs are on it.
+	Params.AddIgnoredActor(GetPawn());
+	if (GetWorld()->LineTraceSingleByChannel(HitResult, StartLocation, EndLocation, ECC_Visibility, Params)) // Line Trace Succeeds
 	{
 		HitLocation = HitResult.Location; // Set hit location
 		return true;
