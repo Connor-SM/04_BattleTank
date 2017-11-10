@@ -5,7 +5,7 @@
 #include "AIController.h"
 #include "TankAIController.generated.h"
 
-class UTank; // Forward Declaration
+class ATank; // Forward Declaration
 
 /**
  * 
