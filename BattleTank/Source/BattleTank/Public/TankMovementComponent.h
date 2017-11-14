@@ -23,6 +23,11 @@ public:
 	// Used for movement with left thumbstick on controller
 	UFUNCTION(BlueprintCallable, Category = "Input")
 	void IntendMoveForward(float Throw);
+
+	// Used for movement with left thumbstick on controller
+	UFUNCTION(BlueprintCallable, Category = "Input")
+	void IntendTurnRight(float Throw);
+
 	
 private:
 	UTankTrack* LeftTrack = nullptr;
