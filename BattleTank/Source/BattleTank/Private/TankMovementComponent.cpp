@@ -25,8 +25,6 @@ void UTankMovementComponent::RequestDirectMove(const FVector& MoveVelocity, bool
 	// Moving AI Tank to the left and right
 	auto RightThrow = FVector::CrossProduct(TankForward, AIForwardIntention).Z;
 	IntendTurnRight(RightThrow);
-
-	//UE_LOG(LogTemp, Warning, TEXT("%s vectoring to %s"), *TankName, *MoveVelocityString);
 }
 
 void UTankMovementComponent::IntendMoveForward(float Throw)
